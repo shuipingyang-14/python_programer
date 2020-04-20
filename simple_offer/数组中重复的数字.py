@@ -56,8 +56,9 @@ def find_repeat_num_3(nums):
 				nums[i] = nums[temp]
 				nums[temp] = temp
 
+
 if __name__ == "__main__":
-	nums = [1,2,3,4,5,4,6,6,7,8]
+	nums = [1, 2, 3, 4, 5, 4, 6, 6, 7, 8]
 	num1 = find_repeat_num_1(nums)
 	num2 = find_repeat_num_2(nums)
 	num3 = find_repeat_num_3(nums)
