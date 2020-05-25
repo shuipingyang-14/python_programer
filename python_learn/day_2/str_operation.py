@@ -117,3 +117,27 @@ print(s.isalpha())  # 字符串只由字母组成
 print(s.isdecimal())  # 字符串只由十进制组成
 print(s.isdigit())  # 字符串是否只由数字组成
 print(s.isnumeric()) # 字符串是否只由数字组成，数字可以是： Unicode 数字，全角数字（双字节），罗马数字，汉字数字，指数类似 ² 与分数类似 ½ 也属于数字
+
+# 9. capitalize
+s1 = "taiBai hello"
+print(s1.capitalize())  # 首字母变大写，其余变小写
+
+# 10. title
+s1 = "taiBai hello3hello"
+print(s1.title())   # 每个单词首字母大写
+
+# 11. swapcase
+s1 = "TaiBai Hello3hello"
+print(s1.swapcase())  # 大小写反转
+
+# 11. center
+s1 = "hello"
+print(s1.center(20, '*'))  # 以字符串为中心，补充够长度的字符
+
+# 12. find
+s1 = 'hello'
+print(s1.find('l'))  # 通过元素找索引，找到第一个就返回，找不到返回-1
+
+# 13. index
+s1 = 'hello'
+print(s1.index('l'))  # 通过元素找索引，找到第一个就返回，找不到报错
