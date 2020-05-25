@@ -69,3 +69,42 @@ for index in range(0,len(l1[3])):
 	if l1[3][index] == 'b':
 		l1[3][index] = 'bbb'
 print(l1)
+
+# 8.count
+l = [1,2,3,2,3,4]
+print(l.count(3))  # 统计元素个数
+
+# 9.index
+l = [1,2,3,2,3,4]
+print(l.index(3))  # 通过元素找索引，找到第一个就返回
+
+# 10.sort
+l = [1,2,3,2,3,4]
+l.sort()
+print(l)  # 从小到大排序
+l.sort(reverse=False)
+print(l)  # 从大到小排序
+
+# 11.reverse
+l = [1,2,3,2,3,4]
+l.reverse()   # 反转列表
+print(l)
+
+# 12.列表想加
+l1 = [1,2,3,4]
+l2 = [4,5,6,7]
+print(l1+l2)
+
+# 列表与数字相乘
+l1 = [1,2,3]
+print(l1*3)
+
+l1 = [11,22,33,44,55]
+# 删除索引为奇数的值
+del l1[1::2]
+print(l1)
+l1 = [11,22,33,44,55]
+for index in range(len(l1)-1, -1, -1):
+	if index %2 != 0:
+		l1.pop(index)
+print(l1)

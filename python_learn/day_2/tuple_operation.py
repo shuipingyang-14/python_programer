@@ -30,3 +30,7 @@ a, b = c
 print(a, b)
 a, b = [11, 22]
 print(a, b)
+
+# 5. count
+t = (1,2,2,2,2)
+print(t.count(2))  # 统计元素出现个数
