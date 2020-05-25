@@ -32,14 +32,14 @@ print(d)
 
 # 3.删除数据
 d = {'a': 1, 'b': 2, 'c': 3}
-d.pop('c') # 按照键值删除，有返回值
-d.pop('a', "no key")   # 设置第二个参数无论字典是否有此键值，都不会报错，返回值是设置的参数
+d.pop('c')  # 按照键值删除，有返回值
+d.pop('a', "no key")  # 设置第二个参数无论字典是否有此键值，都不会报错，返回值是设置的参数
 d.pop('d', "no key")
 print(d)
 d.update({'a': 4, 'e': 2, 'f': 3})
 print(d)
 
-d.clear()   # 清空元素
+d.clear()  # 清空元素
 print(d)
 
 d = {'a': 1, 'b': 2, 'c': 3}
@@ -56,7 +56,7 @@ d.update(a=5)
 print(d)
 
 # 5.查元素
-d = {'a': 1, 'b': 2, 'c': 3,'d':[1,2,3]}
+d = {'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3]}
 print(d['a'])
 print(d['d'][1])
 res = d.get('d')
@@ -65,33 +65,33 @@ res = d.get('e', "no key")  # 可设置返回值
 print(res)
 
 # 6.keys()
-d = {'a': 1, 'b': 2, 'c': 3,'d':[1,2,3]}
+d = {'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3]}
 print(d.keys(), type(d.keys()))
 # 可转化成列表
 print(list(d.keys()), type(list(d.keys())))
 for key in dic.keys():
-	print(key)
+    print(key)
 
 # 7.values()
-d = {'a': 1, 'b': 2, 'c': 3,'d':[1,2,3]}
+d = {'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3]}
 print(d.values(), type(d.values()))
 print(list(d.values()), type(list(d.values())))
 for value in dic.values():
-	print(value)
+    print(value)
 
 # 8.items()
-d = {'a': 1, 'b': 2, 'c': 3,'d':[1,2,3]}
-for i,j in d.items():
-	print(i,j)
+d = {'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3]}
+for i, j in d.items():
+    print(i, j)
 
 # 10.fromkeys
-dic = dic.fromkeys([1,2,3], [])  # 值共有一个，更改一个则所有值均更改
-dic[1].append("2")
-print(dic)
+dic = dic.fromkeys([1, 2, 3], [])  # 值共有一个，更改一个则所有值均更改
+dic[1].append(666)
+print(dic)  # {1: [666], 2: [666], 3: [666]}
 
-dic = {'k1':'v1', 'k2':'v2', 'k3':'v3', 'age':18}
+dic = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3', 'age': 18}
 # 删除字典中包含k的键值对
 for key in list(dic.keys()):
-	if 'k' in key:
-		dic.pop(key)
+    if 'k' in key:
+        dic.pop(key)
 print(dic)
