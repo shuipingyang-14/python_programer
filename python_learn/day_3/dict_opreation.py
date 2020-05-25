@@ -83,3 +83,15 @@ for value in dic.values():
 d = {'a': 1, 'b': 2, 'c': 3,'d':[1,2,3]}
 for i,j in d.items():
 	print(i,j)
+
+# 10.fromkeys
+dic = dic.fromkeys([1,2,3], [])  # 值共有一个，更改一个则所有值均更改
+dic[1].append("2")
+print(dic)
+
+dic = {'k1':'v1', 'k2':'v2', 'k3':'v3', 'age':18}
+# 删除字典中包含k的键值对
+for key in list(dic.keys()):
+	if 'k' in key:
+		dic.pop(key)
+print(dic)
