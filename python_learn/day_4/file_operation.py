@@ -184,10 +184,10 @@ f.close()
 # 9.2 将硬盘存放的该文件的内容一行一行地读入内存，修改完毕就写入新文件，最后用新文件覆盖源文件
 import os
 
-with open('test_11.txt', 'r', encoding='utf-8') as read_f,open('.test_11.txt.swap','w', encoding='utf-8') as write_f:
+with open('test_11.txt', 'r', encoding='utf-8') as read_f, open('.test_11.txt.swap', 'w', encoding='utf-8') as write_f:
     for line in read_f:
-        line=line.replace('hello','alex')
+        line = line.replace('hello', 'alex')
         write_f.write(line)
 
 os.remove('test_11.txt')
-os.rename('.test_11.txt.swap','test_11.txt')
+os.rename('.test_11.txt.swap', 'test_11.txt')
