@@ -84,6 +84,106 @@ def mkdir_test():
     print("目录已创建")
 
 
+def open_test():
+    # 打开文件
+    fd = os.open("foo.txt", os.O_RDWR | os.O_CREAT)
+
+    # 写入字符串
+    os.write(fd, 'This is test')
+
+    # 关闭文件
+    os.close(fd)
+
+    print("关闭文件成功!!")
+
+
+def read_test():
+    # 打开文件
+    fd = os.open("foo.txt", os.O_RDWR)
+
+    # 读取文本
+    ret = os.read(fd, 1024)
+    print(ret)
+
+    # 关闭文件
+    os.close(fd)
+    print("关闭文件成功!!")
+
+
+def remove_test():
+    print("删除前目录为: %s" % os.listdir(os.getcwd()))
+    os.remove("foo.txt")
+    print("删除后目录为: %s" % os.listdir(os.getcwd()))
+
+    os.remove(r"E:\PyCode\python_programer\python_learn\day_4")
+
+
+def removedirs_test():
+    # 列出目录
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+    # 移除
+    os.removedirs("/test")
+
+    # 列出移除后的目录
+    print("移除后目录为 %s :" % os.listdir(os.getcwd()))
+
+def rename_test():
+    # 列出目录
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+    # 重命名
+    os.rename("目录操作.md", "目录操作.md")
+
+    print("重命名成功。")
+
+    # 列出重命名后的目录
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+
+def renames_test():
+    print("当前目录为: %s" % os.getcwd())
+
+    # 列出目录
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+    # 重命名 "aa1.txt"
+    os.renames("aa.txt", "newdir/aanew.txt")
+
+    print("重命名成功。")
+
+    # 列出重命名的文件 "aa1.txt"
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+def rmdir_test():
+    # 列出目录
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+    # 删除路径
+    os.rmdir("test")
+
+    # 列出重命名后的目录
+    print("目录为: %s" % os.listdir(os.getcwd()))
+
+def stat_test():
+    statinfo = os.stat('file_operation.py')
+    print(statinfo)
+
+def write_test():
+    # 打开文件
+    fd = os.open("newdir\\aanew.txt", os.O_RDWR | os.O_CREAT)
+
+    # 写入字符串
+    ret = os.write(fd, "This is runoob.com site")
+
+    # 输入返回值
+    print("写入的位数为: %s" %ret)
+
+    # 关闭文件
+    os.close(fd)
+    print("关闭文件成功!!")
+
+
 if __name__ == '__main__':
     # access_test()
     # chdir_test()
@@ -91,4 +191,13 @@ if __name__ == '__main__':
     # chown_test()
     # getcwd_test()
     # listdir_test()
-    mkdir_test()
+    # mkdir_test()
+    # open_test()
+    # read_test()
+    # remove_test()
+    # removedirs_test()
+    # rename_test()
+    # renames_test()
+    # rmdir_test()
+    # stat_test()
+    write_test()
