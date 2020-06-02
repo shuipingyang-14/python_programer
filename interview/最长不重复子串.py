@@ -9,11 +9,13 @@
 
 def long_no_repeat_substr(strs):
     res_list = []
-    length = len(one_str)
+    if strs == '':
+        return 0
+    length = len(strs)
     for i in range(length):
-        tmp = one_str[i]
+        tmp = strs[i]
         for j in range(i + 1, length):
-            if one_str[j] not in tmp:
+            if str[j] not in tmp:
                 tmp += one_str[j]
             else:
                 break
@@ -24,6 +26,27 @@ def long_no_repeat_substr(strs):
         if len(res_list[i]) > len(max):
             max = res_list[i]
     return max
+
+def lengthOfLongestSubstring(s):
+    if s == '':
+        return 0
+    if len(s) == 1:
+        return 1
+
+    def find_left(s, i):
+        tmp_str = s[i]
+        j = i - 1
+        while j >= 0 and s[j] not in tmp_str:
+            tmp_str += s[j]
+            j -= 1
+        return len(tmp_str)
+
+    length = 0
+    for i in range(0, len(s)):
+        length = max(length, find_left(s, i))
+    return length
+
+
 
 if __name__ == '__main__':
     one_str_list = ['120135435', 'abdfkjkgdok', '123456780423349']
