@@ -128,6 +128,7 @@ def removedirs_test():
     # 列出移除后的目录
     print("移除后目录为 %s :" % os.listdir(os.getcwd()))
 
+
 def rename_test():
     # 列出目录
     print("目录为: %s" % os.listdir(os.getcwd()))
@@ -155,6 +156,7 @@ def renames_test():
     # 列出重命名的文件 "aa1.txt"
     print("目录为: %s" % os.listdir(os.getcwd()))
 
+
 def rmdir_test():
     # 列出目录
     print("目录为: %s" % os.listdir(os.getcwd()))
@@ -165,9 +167,11 @@ def rmdir_test():
     # 列出重命名后的目录
     print("目录为: %s" % os.listdir(os.getcwd()))
 
+
 def stat_test():
     statinfo = os.stat('file_operation.py')
     print(statinfo)
+
 
 def write_test():
     # 打开文件
@@ -177,7 +181,7 @@ def write_test():
     ret = os.write(fd, "This is runoob.com site")
 
     # 输入返回值
-    print("写入的位数为: %s" %ret)
+    print("写入的位数为: %s" % ret)
 
     # 关闭文件
     os.close(fd)
