@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/6/1 16:18
-@ file:     bulit-in_C.py
+@ file:     built-in_C.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """
