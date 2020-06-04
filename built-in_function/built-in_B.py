@@ -44,6 +44,23 @@ def bytearray_test_2(num1, num2):
     """
     return bytearray(num1, num2)
 
+def bytes_test_1(num1):
+    """
+    返回一个新的 bytes 对象
+    :param num1: 参数
+    :return: 新字节数组
+    """
+    return bytes(num1)
+
+
+def bytes_test_2(num1, num2):
+    """
+    返回一个新的 bytes 对象
+    :param num1: 参数
+    :param num2: 编码方式
+    :return: 新字节数组
+    """
+    return bytes(num1, num2)
 
 if __name__ == '__main__':
     print(bin_test(10))  # 0b1010
@@ -61,3 +78,7 @@ if __name__ == '__main__':
     print(bytearray_test_1(()))  # bytearray(b'')
     print(bytearray_test_1([1, 2, 3]))  # bytearray(b'\x01\x02\x03')
     print(bytearray_test_2('runoob', 'utf-8'))  # bytearray(b'runoob')
+
+    print(bytes_test_1(()))  # b''
+    print(bytes_test_1([1, 2, 3]))  # b'\x01\x02\x03'
+    print(bytes_test_2('runoob', 'utf-8'))  # b'runoob'
