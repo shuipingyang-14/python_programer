@@ -7,6 +7,7 @@
 @ version:  python 3.8.3
 """
 
+
 def enumerate_test():
     """
     enumerate测试
@@ -23,11 +24,12 @@ def enumerate_test():
     i = 0
     for element in seq:
         print(i, element)
-        i+= 1
+        i += 1
 
     # 使用enumerate循环
     for i, elem in enumerate(seq):
         print(i, elem)
+
 
 def eval_test():
     """
@@ -38,15 +40,19 @@ def eval_test():
     print(eval('3*x'))
     print(eval('pow(2,2)'))
 
-def execfile_test():
+
+def exec_test():
     """
-    执行文件
+    执行储存在字符串或文件中的 Python 语句
     :return:
     """
-    # execfile('bulit-in_A.py')
-    pass
+    exec('print("hello world")')
+    exec("print('runoob.com')")
+    exec("""for i in range(5):\
+    print ("iter time: %d" % i)""")
+
 
 if __name__ == '__main__':
     enumerate_test()
     eval_test()
-    # execfile_test()
+    exec_test()
