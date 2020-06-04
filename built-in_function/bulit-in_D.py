@@ -7,10 +7,12 @@
 @ version:  python 3.8.3
 """
 
+
 class Test():
     x = 10
     y = -5
     z = 0
+
 
 def delattr_test():
     """
@@ -40,10 +42,11 @@ def dict_test():
     print(res1)
     res2 = dict(a='a', b='b', t='t')  # 传入关键字
     print(res2)
-    res3 = dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # 映射函数方式来构造字典
+    res3 = dict(zip(['one', 'two', 'three'], [1, 2, 3]))  # 映射函数方式来构造字典
     print(res3)
     res4 = dict([('one', 1), ('two', 2), ('three', 3)])  # 可迭代对象方式创建字典
     print(res4)
+
 
 def dir_test():
     """
@@ -55,15 +58,16 @@ def dir_test():
     print(dir({}))
     print(dir(""))
 
+
 def divmod_test():
     """
     返回包含商和余数的元组
     :return:
     """
-    print(divmod(7, 2))   # (3. 1)
-    print(divmod(8, 2))   # (4. 0)
-    print(divmod(7, -2))   # (-4. -1)
-    print(divmod(-7, 2))   # (-4. 1)
+    print(divmod(7, 2))  # (3. 1)
+    print(divmod(8, 2))  # (4. 0)
+    print(divmod(7, -2))  # (-4. -1)
+    print(divmod(-7, 2))  # (-4. 1)
 
 
 if __name__ == '__main__':
