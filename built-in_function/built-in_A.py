@@ -34,6 +34,13 @@ def any_test(iter):
     """
     return any(iter)
 
+def ascii_test(str):
+    """
+    返回一个表示对象的字符串
+    :return:
+    """
+    return ascii(str)
+
 
 if __name__ == '__main__':
     num = -45
@@ -76,3 +83,13 @@ if __name__ == '__main__':
     print(any_test(l))  # False
     t = ()  # 空元组
     print(any_test(l))  # False
+
+    s = "hello"
+    print(ascii_test(s))
+    s = 1
+    print(ascii_test(s))
+    s = '中国'
+    print(ascii_test(s))
+    s = [1,2,3,4,5]
+    print(ascii_test(s))
+
