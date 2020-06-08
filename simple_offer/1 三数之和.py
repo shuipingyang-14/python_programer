@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/5/22 23:31
-@ file:     三数之和.py
+@ file:     1 三数之和.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """
