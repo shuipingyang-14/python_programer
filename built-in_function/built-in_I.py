@@ -34,8 +34,19 @@ def input_test():
     print(b)
     print(type(b))
 
+def int_test():
+    """
+    将一个字符串或数字转换为整型
+    :return:
+    """
+    print(int())
+    print(int(3))
+    print(int(3.6))
+    print(int('10', 2))
+    print(int('0xa',16))
+    print(int('12',16))
+
 if __name__ == '__main__':
     id_test()
-    input_test()
-
-    
+    # input_test()
+    int_test()
