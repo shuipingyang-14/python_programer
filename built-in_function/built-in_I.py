@@ -46,7 +46,50 @@ def int_test():
     print(int('0xa',16))
     print(int('12',16))
 
+def isinstance_test():
+    """
+    判断一个对象是否是已知的类型
+    :return:
+    """
+    a = 2
+    print(isinstance(a, int))   # True
+    print(isinstance (a,str))   # False
+    print(isinstance (a,(str,int,list)))   # True
+
+    l1 = [1,2,3]
+    print(isinstance(l1, int))   # False
+    print(isinstance(l1,str))   # False
+    print(isinstance(l1,(str,int,list)))   # True
+
+    class A:
+        pass
+
+    class B(A):
+        pass
+
+    print(isinstance(A(), A))   # True
+    print(type(A()) == A)   # True
+    print(isinstance(B(), A))   # True
+    print(type(B()) == A)   # False
+
+
+def issubclass_test():
+    """
+    判断参数 class 是否是类型参数 classinfo 的子类
+    :return:
+    """
+
+    class A:
+        pass
+
+    class B(A):
+        pass
+
+    print(issubclass(B, A))  # True
+
 if __name__ == '__main__':
     id_test()
     # input_test()
     int_test()
+    isinstance_test()
+    issubclass_test()
