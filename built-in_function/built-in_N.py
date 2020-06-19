@@ -7,6 +7,7 @@
 @ version:  python 3.8.3
 """
 
+
 def next_test():
     """
     返回迭代器的下一项信息
@@ -24,6 +25,7 @@ def next_test():
         except StopIteration:
             # 遇到StopIteration就退出循环
             break
+
 
 if __name__ == '__main__':
     next_test()
