@@ -25,6 +25,7 @@ def open_test():
     f = open('test.txt')
     print(f.read())
 
+
 def ord_test():
     """
     把字符串转换为对应的ASCII数值
@@ -32,6 +33,7 @@ def ord_test():
     """
     print(ord('a'))
     print(ord('€'))
+
 
 if __name__ == '__main__':
     oct_test()
