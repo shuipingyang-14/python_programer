@@ -7,6 +7,9 @@
 @ version:  python 3.8.3
 """
 
+from collections import Iterator
+
+
 # 1. 可迭代对象
 """
 可迭代对象：在python中，但凡内部含有__iter__方法的对象，都是可迭代对象（str  list   tuple  dic  set  range 文件句柄等）
@@ -103,6 +106,11 @@ for i in range(2):
 
 for i in range(2):
     print(next(obj))
+
+print('__next__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__, False
+print('__iter__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__, True
+
+print(isinstance(range(100000000),Iterator))  #验证range执行之后得到的结果不是一个迭代器, False
 
 # 2.7 可迭代对象与迭代器对比
 """
