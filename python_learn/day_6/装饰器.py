@@ -7,173 +7,240 @@
 @ version:  python 3.8.3
 """
 
+# 开放封闭原则：
+# 1.对扩展是开放的：任何一个程序，不可能在设计之初就已经想好了所有的功能并且未来不做任何更新和修改，必须允许代码扩展、添加新功能
+# 2.对修改是封闭的：写一个函数，很有可能已经交付给其他人使用了，如果这个时候我们对函数内部进行修改，或者修改了函数的调用方式，很有可能影响其他已经在使用该函数的用户
+
+# 装饰器：在不改变原被装饰的函数的源代码以及调用方式下，为其添加额外的功能
+
+# 测试函数执行效率
 import time
 
-def timer(func):
+
+def index():
+    """
+    主页页面
+    :return:
+    """
+    time.sleep(1)
+    return "hello"
+
+
+# 第一个版本：index函数除了完成了自己之前的功能，还增加了一个测试执行效率的功能，符合开放原则
+# 其次，index函数源码改变了么？没有，但是执行方式改变了，所以不符合封闭原则
+def timer_1(f):
+    """
+    测试函数执行时间
+    :param f:
+    :return:
+    """
+    start_time = time.time()
+    re = f()
+    end_time = time.time()
+    print(f'此函数的执行效率为{end_time - start_time}')
+    return re
+
+
+# print(timer_1(index))
+
+
+# 第二个版本：装饰器
+def timer_2(f):
     def inner():
-        start = time.time()
-        func()
-        print(time.time() - start)
+        start_time = time.time()
+        f()
+        end_time = time.time()
+        print(f'此函数的执行效率为{end_time - start_time}')
+
     return inner
 
-@timer  #==> fun1 = timer(fun1)
-def fun1():
-    print("in func1...")
+
+# f = timer_2(index)
+# print(f())
 
 
-fun1()
+# 带返回值的装饰器
+def timer_3(f):
+    def inner():
+        start_time = time.time()
+        re = f()
+        end_time = time.time()
+        print(f'此函数的执行效率为{end_time - start_time}')
+        return re
 
-# 装饰器的本质：一个闭包函数
-# 装饰器的功能：在不修改原函数及其调用方式的情况下对原函数功能进行扩展
-
-
-# 装饰带一个参数的函数
-def timer(func):
-    def inner(a):
-        start = time.time()
-        func(a)
-        print(time.time() - start)
     return inner
+
+
+# f = timer_3(index)
+# print(f())
+
+
+# 带一个参数的装饰器
+def home_1(name):
+    time.sleep(1)
+    print(f'欢迎访问{name}主页')
+
+
+def timer_4(f):
+    def inner(name):
+        start_time = time.time()
+        f(name)
+        end_time = time.time()
+        print(f'此函数的执行效率为{end_time - start_time}')
+
+    return inner
+
+
+# home = timer_4(home_1)
+# home('太白')
+
+
+# 带多个参数的装饰器
+
+def home_2(name, age):
+    time.sleep(1)
+    print(f'欢迎访问{name},{age}主页')
+
+
+def timer_5(f):
+    def inner(*args, **kwargs):
+        start_time = time.time()
+        f(*args, **kwargs)
+        end_time = time.time()
+        print(f'此函数的执行效率为{end_time - start_time}')
+
+    return inner
+
+
+# home = timer_5(home_2)
+# home('太白', 18)
+
+
+# 标准装饰器
+
+def wrapper(func):
+    def inner(*args, **kwargs):
+        """
+        执行被装饰函数之前操作
+        """
+        ret = func(*args, **kwargs)
+        """
+        执行被装饰函数之后的操作
+        """
+        return ret
+
+    return inner
+
+
+def timer(func):  # func = home
+    def inner(*args, **kwargs):
+        start_time = time.time()
+        func(*args, **kwargs)
+        end_time = time.time()
+        print(f'此函数的执行效率为{end_time - start_time}')
+
+    return inner
+
 
 @timer
-def fun1(a):
-    print(a)
+def home(name, age):
+    time.sleep(1)
+    print(name, age)
+    print(f'欢迎访问{name}主页')
 
-fun1(1)
 
-# 装饰好多参数的函数
-def timer(func):
+# home('太白', 18)
+
+# 简单版模拟博客园登录
+# 需求： 博客园登陆之后有几个页面，diary，comment，home，如果我要访问这几个页面，必须验证我是否已登录
+# 如果已经成功登录，那么这几个页面我都可以无阻力访问
+# 如果没有登录，任何一个页面都不可以访问，我必须先登录，登录成功之后，才可以访问这个页面
+
+login_status = {
+    'username': None,
+    'status': False,
+}
+
+
+def auth(func):
     def inner(*args, **kwargs):
-        start = time.time()
-        re = func(*args, **kwargs)
-        print(time.time() - start)
-        return re
+        if login_status['status']:
+            ret = func(*args, **kwargs)
+            return ret
+        username = input("请输入用户名：").strip()
+        password = input("请输入密码：").strip()
+
+        if username == 'xy' and password == '123':
+            login_status['status'] = True
+            ret = func(*args, **kwargs)
+            return ret
+
     return inner
 
-@timer   #==> func1 = timer(func1)
-def func1(a,b):
-    print(a, b)
-    print('in func1...')
 
-@timer   #==> func2 = timer(func2)
-def func2(a):
-    print('in func2 and get a:%s'%(a))
-    print("in fun2...")
+@auth
+def diary():
+    print("欢迎访问日记页面")
 
-func1('aaaaaa','bbbbbb')
-func2('aaaaaa')
 
-# 带返回的装饰器
-def timer(func):
-    def inner(*args, **kwargs):
-        start = time.time()
-        re = func(*args, **kwargs)
-        print(time.time() - start)
-        return re
-    return inner
+@auth
+def comment():
+    print("欢迎访问评论页面")
 
-@timer   #==> func1 = timer(func1)
-def func1(a,b):
-    print(a, b)
-    print('in func1...')
 
-@timer   #==> func2 = timer(func2)
-def func2(a):
-    print('in func2 and get a:%s'%(a))
-    return "fun2"
+@auth
+def home():
+    print("欢迎访问博客园主页")
 
-func1('aaaaaa','bbbbbb')
-print(func2('aaaaaa'))
 
-# 查看函数信息方法
-def index():
-    '''这是一个主页信息'''
-    print("from index")
-
-print(index.__doc__)    #查看函数注释的方法
-print(index.__name__)   #查看函数名的方法
-
-from functools import wraps
-
-def demo(func):
-    @wraps(func)  #加在最内层函数正上方
-    def wrapper(*args,**kwargs):
-        return func(*args,**kwargs)
-    return wrapper
-
-@demo
-def index():
-    '''这是一个主页信息'''
-    print("from index")
-
-print(index.__doc__)    #查看函数注释的方法
-print(index.__name__)   #查看函数名的方法
-
-# 装饰器的主要功能：
-#  在不改变函数调用方式的基础上在函数的前、后添加功能
-
-# 装饰器的固定格式：
-def timer(func):
-    def inner(*args,**kwargs):
-        '''执行函数之前要做的'''
-        re = func(*args,**kwargs)
-        '''执行函数之后要做的'''
-        return re
-    return inner
-
-from functools import wraps
-
-def deco(func):
-    @wraps(func) #加在最内层函数正上方
-    def wrapper(*args,**kwargs):
-        return func(*args,**kwargs)
-    return wrapper
+# diary()
+# comment()
+# home()
 
 # 带参数的装饰器
-def outer(flag):
-    def timer(func):
+def auth(x):
+    def auth2(func):
         def inner(*args, **kwargs):
-            if flag:
-                print("执行函数前要做的")
-                start = time.time()
-            re = func(*args, **kwargs)
-            if flag:
-                print("执行函数之后要做的")
-                print(time.time() - start)
-            return re
+            if login_status['status']:
+                ret = func(*args, **kwargs)
+                return ret
+
+            if x == 'wechat':
+                username = input("请输入用户名：").strip()
+                password = input("请输入密码：").strip()
+
+                if username == 'xy' and password == '123':
+                    login_status['status'] = True
+                    ret = func(*args, **kwargs)
+                    return ret
+            elif x == 'qq':
+                username = input("请输入用户名：").strip()
+                password = input("请输入密码：").strip()
+
+                if username == 'xy' and password == '123':
+                    login_status['status'] = True
+                    ret = func(*args, **kwargs)
+                    return ret
+
         return inner
-    return timer
 
-@outer(False)
-def func():
-    print(111)
+    return auth2
 
-func()
 
-@outer(1)
-def func():
-    print(111)
+@auth('wechat')
+def jitter():
+    print('记录美好生活')
 
-func()
 
-# 多个装饰器装饰同一个函数
-def wrapper1(func):
-    def inner():
-        print('wrap1,before func')
-        func()
-        print('wrap1, after func')
-    return inner
+# @auth('wechat') :分两步：
+# 第一步先执行auth('wechat')函数，得到返回值auth2
+# 第二步@与auth2结合，形成装饰器@auth2 然后在依次执行
 
-def wrapper2(func):
-    def inner():
-        print('wrap2,before func')
-        func()
-        print('wrap2, after func')
-    return inner
 
-@wrapper1
-@wrapper2
-def f():
-    print('in f...')
+@auth('qq')
+def pipefish():
+    print('期待你的内涵神评论')
 
-f()
+
+jitter()
+pipefish()
