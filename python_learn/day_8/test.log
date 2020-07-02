@@ -1,0 +1,5 @@
+2020-07-02 17:03:15,987 logging模块.py [line:35] DEBUG debug message
+2020-07-02 17:03:15,987 logging模块.py [line:36] INFO info message
+2020-07-02 17:03:15,987 logging模块.py [line:37] WARNING warning message
+2020-07-02 17:03:15,987 logging模块.py [line:38] ERROR error message
+2020-07-02 17:03:15,987 logging模块.py [line:39] CRITICAL critical message
