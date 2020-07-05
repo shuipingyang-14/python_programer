@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/6/19 10:02
-@ file:     装饰器.py
+@ file:     5 装饰器.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """

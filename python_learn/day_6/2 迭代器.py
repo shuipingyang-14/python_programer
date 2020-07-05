@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/5/26 15:18
-@ file:     迭代器.py
+@ file:     2 迭代器.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """

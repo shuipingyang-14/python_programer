@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/5/28 10:26
-@ file:     生成器-推导式构建.py
+@ file:     4 生成器-推导式构建.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """
