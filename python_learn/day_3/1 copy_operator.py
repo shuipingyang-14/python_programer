@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2020/5/10 12:45
+# @python  : python 3.7
+# @Author  : 水萍
+# @File    : 1 copy_opreation.py
+# @Software: PyCharm
+
+
 # 赋值运算
 l1 = [1,2,3,[22,33]]
 l2 = l1

@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2020/5/10 14:05
+# @python  : python 3.7
+# @Author  : 水萍
+# @File    : 2 test.py
+# @Software: PyCharm
+
+
 # v = {}
 #
 # for index in range(0, 10):
