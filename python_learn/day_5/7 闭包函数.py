@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/6/19 9:48
-@ file:     闭包函数.py
+@ file:     7 闭包函数.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """

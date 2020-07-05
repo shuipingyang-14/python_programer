@@ -2,7 +2,7 @@
 """
 @ author:   ysp
 @ time：    2020/5/26 10:24
-@ file:     global关键字.py
+@ file:     3 global关键字.py
 @ IDE:      PyCharm
 @ version:  python 3.8.3
 """
