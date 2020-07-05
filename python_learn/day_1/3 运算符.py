@@ -2,7 +2,7 @@
 # @Time    : 2020/5/1 23:07
 # @python  : python 3.7
 # @Author  : 水萍
-# @File    : 运算符.py
+# @File    : 3 运算符.py
 # @Software: PyCharm
 
 print (2 ** 3)
