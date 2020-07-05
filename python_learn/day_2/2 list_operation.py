@@ -2,7 +2,7 @@
 # @Time    : 2020/5/7 22:17
 # @python  : python 3.7
 # @Author  : 水萍
-# @File    : list_operation.py
+# @File    : 2 list_operation.py
 # @Software: PyCharm
 
 
