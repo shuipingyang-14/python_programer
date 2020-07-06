@@ -36,7 +36,7 @@ def quick_sort_1(lists):
     if len(lists) < 2:
         return lists
     # 找出基准值
-    mid = lists[len(lists) // 2]
+    mid = lists[0]
     left, right = [], []
     lists.remove(mid)
     for i in lists:
