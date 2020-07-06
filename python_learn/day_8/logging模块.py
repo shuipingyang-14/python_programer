@@ -26,17 +26,17 @@ CRITICAL:root:critical message
 """
 
 # 配置日志级别，日志格式，输出位置
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(filename)s [line:%(lineno)d] %(levelname)s %(message)s',
-                    # datefmt='%Y/%m/%d-%H:%M:%S',
-                    filename='test.log',
-                    filemode='w')
-
-logging.debug('debug message')
-logging.info('info message')
-logging.warning('warning message')
-logging.error('error message')
-logging.critical('critical message')
+# logging.basicConfig(level=logging.DEBUG,
+#                     format='%(asctime)s %(filename)s [line:%(lineno)d] %(levelname)s %(message)s',
+#                     # datefmt='%Y/%m/%d-%H:%M:%S',
+#                     filename='test.log',
+#                     filemode='w')
+#
+# logging.debug('debug message')
+# logging.info('info message')
+# logging.warning('warning message')
+# logging.error('error message')
+# logging.critical('critical message')
 
 # 参数说明
 """
@@ -65,3 +65,33 @@ format参数中可能用到的格式化串：
 %(process)d 进程ID。可能没有
 %(message)s用户输出的消息
 """
+
+# logger对象配置
+logger = logging.getLogger()
+# 创建一个handler，用于写入日志文件
+fh = logging.FileHandler('test.log', encoding='utf-8')
+
+# 创建一个handler，输出到控制台
+ch = logging.StreamHandler()
+
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+ch.setLevel(logging.ERROR)
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+logger.addHandler(fh) #logger对象可以添加多个fh和ch对象
+logger.addHandler(ch)
+logger.setLevel(logging.DEBUG)
+
+logger.debug('logger debug message\n')
+logger.info('logger info message\n')
+logger.warning('logger warning message\n')
+logger.error('logger error message\n')
+logger.critical('logger critical message\n')
+
+
+# logging库提供了多个组件：Logger、Handler、Filter、Formatter
+# Logger对象提供应用程序可直接使用的接口，Handler发送日志到适当的目的地，Filter提供了过滤日志信息的方法，Formatter指定日志显示格式
+# 另外，可以通过：logger.setLevel(logging.Debug)设置级别,当然，也可以通过fh.setLevel(logging.Debug)单对文件流设置某个级别
+

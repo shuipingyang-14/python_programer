@@ -3,3 +3,38 @@
 2020-07-02 17:03:15,987 loggingÄ£¿é.py [line:37] WARNING warning message
 2020-07-02 17:03:15,987 loggingÄ£¿é.py [line:38] ERROR error message
 2020-07-02 17:03:15,987 loggingÄ£¿é.py [line:39] CRITICAL critical message
+2020-07-02 18:02:00,342 - root - WARNING - logger warning message
+2020-07-02 18:02:00,343 - root - ERROR - logger error message
+2020-07-02 18:02:00,343 - root - CRITICAL - logger critical message
+2020-07-02 18:02:52,851 - root - WARNING - logger warning message
+2020-07-02 18:02:52,851 - root - ERROR - logger error message
+2020-07-02 18:02:52,851 - root - CRITICAL - logger critical message
+2020-07-02 18:03:41,286 - root - WARNING - logger warning message
+2020-07-02 18:03:41,286 - root - ERROR - logger error message
+2020-07-02 18:03:41,286 - root - CRITICAL - logger critical message
+2020-07-02 18:05:02,730 - root - DEBUG - logger debug message
+2020-07-02 18:05:02,730 - root - INFO - logger info message
+2020-07-02 18:05:02,730 - root - WARNING - logger warning message
+2020-07-02 18:05:02,731 - root - ERROR - logger error message
+2020-07-02 18:05:02,731 - root - CRITICAL - logger critical message
+2020-07-02 18:05:53,040 - root - DEBUG - logger debug message
+2020-07-02 18:05:53,040 - root - INFO - logger info message
+2020-07-02 18:05:53,040 - root - WARNING - logger warning message
+2020-07-02 18:05:53,040 - root - ERROR - logger error message
+2020-07-02 18:05:53,040 - root - CRITICAL - logger critical message
+2020-07-02 18:06:29,768 - root - DEBUG - logger debug message
+2020-07-02 18:06:29,768 - root - INFO - logger info message
+2020-07-02 18:06:29,768 - root - WARNING - logger warning message
+2020-07-02 18:06:29,768 - root - ERROR - logger error message
+2020-07-02 18:06:29,768 - root - CRITICAL - logger critical message
+
+2020-07-02 18:06:52,018 - root - DEBUG - logger debug message
+
+2020-07-02 18:06:52,018 - root - INFO - logger info message
+
+2020-07-02 18:06:52,019 - root - WARNING - logger warning message
+
+2020-07-02 18:06:52,019 - root - ERROR - logger error message
+
+2020-07-02 18:06:52,019 - root - CRITICAL - logger critical message
+

@@ -1,0 +1,6 @@
+[2020-07-02 18:37:47,288] [MainThread:21292] [task_id:__main__] [logging配置.py:74][INFO] [It works!]
+[2020-07-02 18:37:47,288] [MainThread:21292] [task_id:__main__] [logging配置.py:75][DEBUG] [logger debug message]
+[2020-07-02 18:37:47,288] [MainThread:21292] [task_id:__main__] [logging配置.py:76][INFO] [logger info message]
+[2020-07-02 18:37:47,288] [MainThread:21292] [task_id:__main__] [logging配置.py:77][WARNING] [logger warning message]
+[2020-07-02 18:37:47,288] [MainThread:21292] [task_id:__main__] [logging配置.py:78][ERROR] [logger error message]
+[2020-07-02 18:37:47,288] [MainThread:21292] [task_id:__main__] [logging配置.py:79][CRITICAL] [logger critical message]
