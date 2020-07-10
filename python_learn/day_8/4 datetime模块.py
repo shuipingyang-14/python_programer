@@ -52,6 +52,7 @@ now_time = datetime.now()  # 现在的时间
 print(datetime.now() + timedelta(weeks=3)) # 三周后
 # 2020-07-26 22:16:31.054370
 
+# 2009-01-17
 print(datetime.now() + timedelta(weeks=-3)) # 三周前
 # 2020-06-14 22:16:31.054370
 
@@ -82,6 +83,7 @@ current_time = datetime.now()
 # 2020-07-05 22:17:41.054370
 
 # 可直接调整到指定的 年 月 日 时 分 秒 等
+
 print(current_time.replace(year=1977))  # 直接调整到1977年
 # 1977-07-05 22:16:31.054370
 print(current_time.replace(month=1))  # 直接调整到1月份
@@ -92,5 +94,3 @@ print(current_time.replace(year=1989,month=4,day=25))  # 1989-04-25 18:49:05.898
 
 # 将时间戳转化成时间
 print(date.fromtimestamp(1232132131))  # 2009-01-17
-# 2009-01-17
-
