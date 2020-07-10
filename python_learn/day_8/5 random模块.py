@@ -9,6 +9,8 @@
 
 import random
 
+
+
 # random()获取[0.0, 1.0]之阿健的浮点数
 print(random.random())  # 0.38633156120825607
 
