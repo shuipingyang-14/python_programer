@@ -49,3 +49,48 @@ class Student:
 ```
 * __new__方法
 __new__方法和__init__的参数一样，__init__在类实例创建后调用，__new__是创建类实例的方法
+```python
+class Person(object):
+    def __new__(cls, name, age):
+        print('this is __new__')
+        return super(Person, cls).__new__(cls)
+
+    def __init__(self, name, age):
+        print('this is the __init__')
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return '<Person: %s(%s)>' %(self.name, self.age)
+
+if __name__ == '__main__':
+    p = Person('zhangsan', 18)
+    print(p)
+    
+# 结果
+# this is __new__
+# this is the __init__
+# <Person: zhangsan(18)>
+
+# 执行逻辑：
+"""
+1. p = Person(name, age)
+2. 首先执行使用name和age参数来执行Person类的__new__方法，这个__new__方法会返回Person类的一个实例（通常情况下是使用 super(Persion, cls).__new__(cls) 这样的方式）
+3. 然后利用这个实例来调用类的__init__方法，上一步里面__new__产生的实例也就是 __init__里面的的 self
+"""
+```
+
+* __init__和__new__主要的区别：
+1. __init__通常用于初始化一个新实例，控制初始化的过程，比如添加一些属性，做一些额外操作，发生在类实例被创建完成后，是实例级别的方法
+2. __new__通常用于控制生成一个新实例过程，是类级别的方法
+
+* __new__作用：
+__new__是当继承一些不可变的class时(比如int,str,tuple)，提供一个自定义类实例化过程的途径，实现自定义的metaclass
+```python
+class PositiveInterger(int):
+    def __new__(cls, value):
+        return super(PositiveInterger, cls).__new__(cls, abs(value))
+        
+i = PositiveInterger(-3)
+print(i)
+```
