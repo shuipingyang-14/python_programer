@@ -39,6 +39,6 @@ def longestCommonPrefix(strs):
 
 
 if __name__ == '__main__':
-    l = ["cba",""]
+    l = ["cba","cbb", "cb"]
     res = longestCommonPrefix(l)
     print(res)
