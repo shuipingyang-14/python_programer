@@ -134,7 +134,7 @@ barry = Gamerole('太白', 10, 200)
 panky = Gamerole('金莲', 20, 50)
 pillow = Weapon('绣花枕头', 2)
 
-# 给人物装备武器对象。
+# 给人物装备武器对象
 barry.equip_weapon(pillow)
 
 # 开始攻击
