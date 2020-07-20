@@ -139,6 +139,8 @@ print(re.findall('compan(?:y|ies)','Too many companies have gone bankrupt, and t
 # findall 全部找到返回一个列表
 print(re.findall('a', 'alexwusirgarryeval'))
 # ['a', 'a', 'a']
+print(re.findall('sb|alex', 'alex sb sb barry 你好'))
+# ['alex', 'sb', 'sb']
 
 # search 只找到第一个匹配然后返回一个包含匹配信息的对象，该对象可以通过调用group()方法得到匹配的字符串，如果字符没有匹配，返回None
 print(re.search('sb|alex', 'alex sb sb barry 你好'))
